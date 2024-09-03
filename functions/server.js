@@ -68,20 +68,32 @@ exports.handler = async (event, context) => {
         "Project Name(mo.day-category,name,type)": {
           title: [{ text: { content: project_name } }],
         },
-        Reference: { url: reference_link },
-        "Loom Video": { url: loom_video },
+        ...(reference_link && { Reference: { url: reference_link } }),
+        ...(loom_video && { "Loom Video": { url: loom_video } }),
         Instructions: { rich_text: [{ text: { content: instructions } }] },
         Type: { select: { name: type } },
         Format: { multi_select: formatArray.map((item) => ({ name: item })) },
-        "Primary Text": { rich_text: [{ text: { content: primary_text } }] },
-        "Headline (on platform)": {
-          rich_text: [{ text: { content: headline_on_platform } }],
-        },
+        ...(primary_text && {
+          "Primary Text": { rich_text: [{ text: { content: primary_text } }] },
+        }),
+        ...(headline_on_platform && {
+          "Headline (on platform)": {
+            rich_text: [{ text: { content: headline_on_platform } }],
+          },
+        }),
         Description: { rich_text: [{ text: { content: description } }] },
-        "Visual Hook": { rich_text: [{ text: { content: visual_hook } }] },
-        "V Hooks": { number: parseInt(v_hooks) },
-        "Audible Hook": { rich_text: [{ text: { content: audible_hook } }] },
-        "A Hooks": { number: parseInt(a_hooks) },
+        ...(visual_hook && {
+          "Visual Hook": { rich_text: [{ text: { content: visual_hook } }] },
+        }),
+        ...(v_hooks !== undefined && v_hooks !== null && v_hooks !== "" && !isNaN(v_hooks) && {
+          "V Hooks": { number: parseInt(v_hooks) },
+        }),
+        ...(audible_hook && {
+          "Audible Hook": { rich_text: [{ text: { content: audible_hook } }] },
+        }),
+        ...(a_hooks !== undefined && a_hooks !== null && a_hooks !== "" && !isNaN(a_hooks) && {
+          "A Hooks": { number: parseInt(a_hooks) },
+        }),
         ...(visual_headline && {
           "Visual Headline": {
             rich_text: [{ text: { content: visual_headline } }],
@@ -94,7 +106,6 @@ exports.handler = async (event, context) => {
           !isNaN(cc_scripts) && {
             "CC/Scripts": { number: parseInt(cc_scripts) },
           }),
-        // New code for "CTA's" and "CTA #"
         ...(ctas && {
           "CTA's": { rich_text: [{ text: { content: ctas } }] },
         }),
@@ -109,6 +120,11 @@ exports.handler = async (event, context) => {
         "Testing Media Buyers": {
           multi_select: buyersArray.map((buyer) => ({ name: buyer })),
         },
+        ...(core_concept_script && {
+          "Core Concept Script": {
+            rich_text: [{ text: { content: core_concept_script } }],
+          },
+        }),
       },
     });
 
