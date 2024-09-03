@@ -121,7 +121,7 @@ exports.handler = async (event, context) => {
           multi_select: buyersArray.map((buyer) => ({ name: buyer })),
         },
         ...(core_concept_script && {
-          "Core Concept Script": {
+          "Core Concept/Script": {
             rich_text: [{ text: { content: core_concept_script } }],
           },
         }),
