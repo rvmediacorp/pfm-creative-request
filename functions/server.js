@@ -18,11 +18,10 @@ const producerIds = {
 
 // Netlify function handler
 exports.handler = async (event, context) => {
-  console.log(event.body.project_name);
-  // const t = JSON.parse(event.body);
-  // console.log(t);
+  console.log("Received body:", event.body);
   try {
     const body = querystring.parse(event.body);
+    console.log("Parsed body:", body);
     const {
       iteration_new_concept,
       category,
@@ -49,6 +48,9 @@ exports.handler = async (event, context) => {
       producer,
       testing_media_buyers,
     } = body;
+
+    // Log the specific field to ensure it's being parsed correctly
+    console.log("Core Concept/Script:", core_concept_script);
 
     // Ensure testing_media_buyers is an array
     let buyersArray = Array.isArray(testing_media_buyers)
