@@ -40,7 +40,7 @@ exports.handler = async (event, context) => {
       a_hooks,
       visual_headline,
       v_headlines,
-      core_concept_script,
+      "core_concept/script": core_concept_script,
       cc_scripts,
       ctas,
       number_of_ctas,
