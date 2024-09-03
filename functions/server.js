@@ -87,15 +87,23 @@ exports.handler = async (event, context) => {
             rich_text: [{ text: { content: visual_headline } }],
           },
         }),
-        "V Headlines": { number: parseInt(v_headlines) },
+        "V Headlines": { number: parseInt(v_headlines) || 0 },
         ...(cc_scripts !== undefined &&
           cc_scripts !== null &&
           cc_scripts !== "" &&
           !isNaN(cc_scripts) && {
             "CC/Scripts": { number: parseInt(cc_scripts) },
           }),
-        "CTA's": { rich_text: [{ text: { content: ctas } }] },
-        "CTA #": { number: parseInt(number_of_ctas) },
+        // New code for "CTA's" and "CTA #"
+        ...(ctas && {
+          "CTA's": { rich_text: [{ text: { content: ctas } }] },
+        }),
+        ...(number_of_ctas !== undefined &&
+          number_of_ctas !== null &&
+          number_of_ctas !== "" &&
+          !isNaN(number_of_ctas) && {
+            "CTA #": { number: parseInt(number_of_ctas) },
+          }),
         "Captions?": { select: { name: captions } },
         Producer: { people: [{ id: producer_id }] },
         "Testing Media Buyers": {
