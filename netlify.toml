@@ -1,0 +1,8 @@
+[build]
+  command = "echo 'No build command'"
+  publish = "public"
+  functions = "netlify/functions"
+
+[dev]
+  publish = "public"
+  functions = "functions"  # Ensure this is specified under both `build` and `dev`

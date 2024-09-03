@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PFM Creative Request Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body class="bg-[#E9E6D7] flex justify-center min-h-screen">
+    <div class="w-full max-w-2xl p-8 bg-white shadow-md rounded-md my-8">
+      <img
+        src="https://powerfoxmedia.com/LogoLG.svg"
+        alt="Logo"
+        class="mx-auto mb-6"
+      />
+      <h1 class="text-2xl font-bold text-center mb-8">
+        PFM Creative Request Form
+      </h1>
+      <form
+        action="/.netlify/functions/server"
+        method="POST"
+        class="space-y-6"
+        data-netlify="true"
+        name="creative-request-form"
+      >
+        <!-- Iteration/New Concept -->
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold form-label"
+            >Iteration/New Concept</label
+          >
+          <div class="flex items-center">
+            <label class="mr-4 flex items-center">
+              <input
+                type="radio"
+                name="iteration_new_concept"
+                value="Iteration"
+                class="mr-1 form-input"
+              />
+              Iteration
+            </label>
+            <label class="flex items-center">
+              <input
+                type="radio"
+                name="iteration_new_concept"
+                value="New Concept"
+                class="mr-1 form-input"
+              />
+              New Concept
+            </label>
+          </div>
+        </div>
+
+        <!-- Category -->
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold">Category</label>
+          <select
+            name="category"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          >
+            <option value="Advice">Advice</option>
+            <option value="AI video">AI video</option>
+            <option value="an ongoing series">An ongoing series</option>
+            <option value="BTS">BTS</option>
+            <option value="Daily News">Daily News</option>
+            <option value="EDU">EDU</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="inspirational">Inspirational</option>
+            <option value="personal">Personal</option>
+            <option value="podcast clips">Podcast clips</option>
+            <option value="polls respond to comment">
+              Polls respond to comment
+            </option>
+            <option value="stat graphic">Stat graphic</option>
+            <option value="UGC Ad">UGC Ad</option>
+          </select>
+        </div>
+
+        <!-- Project Name -->
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold">Project Name</label>
+          <input
+            type="text"
+            name="project_name"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            placeholder="Project Name(mo.day-category,vertical,offer)"
+          />
+        </div>
+
+        <!-- Reference Link -->
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold">Reference Link</label>
+          <input
+            type="url"
+            name="reference_link"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            placeholder="Share links from Dropbox, Facebook ad library, or Foreplay here"
+          />
+        </div>
+
+        <!-- Loom Video -->
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold">Loom Video</label>
+          <input
+            type="url"
+            name="loom_video"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            placeholder="Share Loom video link here"
+          />
+        </div>
+
+        <!-- Instructions -->
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold">Instructions</label>
+          <textarea
+            name="instructions"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            rows="4"
+            placeholder="Type instructions here"
+          ></textarea>
+        </div>
+
+        <!-- Type -->
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold">Type</label>
+          <select
+            name="type"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          >
+            <option value="Carousel">Carousel</option>
+            <option value="VSL">VSL</option>
+            <option value="Static">Static</option>
+            <option value="Video">Video</option>
+          </select>
+        </div>
+
+        <!-- Format -->
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold">Format</label>
+          <div class="format-grid">
+            <label class="format-option">
+              <input
+                type="checkbox"
+                name="format"
+                value="3:4"
+                class="hidden peer"
+              />
+              <div
+                class="aspect-[3/4] bg-gray-300 cursor-pointer peer-checked:bg-blue-500 flex items-center justify-center"
+              >
+                <span class="text-black peer-checked:text-white">3:4</span>
+              </div>
+            </label>
+            <label class="format-option">
+              <input
+                type="checkbox"
+                name="format"
+                value="16:9"
+                class="hidden peer"
+              />
+              <div
+                class="aspect-[16/9] bg-gray-300 cursor-pointer peer-checked:bg-blue-500 flex items-center justify-center"
+              >
+                <span class="text-black peer-checked:text-white">16:9</span>
+              </div>
+            </label>
+            <label class="format-option">
+              <input
+                type="checkbox"
+                name="format"
+                value="1:1"
+                class="hidden peer"
+              />
+              <div
+                class="aspect-[1/1] bg-gray-300 cursor-pointer peer-checked:bg-blue-500 flex items-center justify-center"
+              >
+                <span class="text-black peer-checked:text-white">1:1</span>
+              </div>
+            </label>
+            <label class="format-option">
+              <input
+                type="checkbox"
+                name="format"
+                value="9:16"
+                class="hidden peer"
+              />
+              <div
+                class="aspect-[9/16] bg-gray-300 cursor-pointer peer-checked:bg-blue-500 flex items-center justify-center"
+              >
+                <span class="text-black peer-checked:text-white">9:16</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Primary Text -->
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold">Primary Text</label>
+          <textarea
+            name="primary_text"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            rows="4"
+            placeholder="Type primary text here"
+          ></textarea>
+        </div>
+
+        <!-- Headline (on platform) -->
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold">Headline (on platform)</label>
+          <textarea
+            name="headline_on_platform"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            rows="4"
+            placeholder="Type headline here"
+          ></textarea>
+        </div>
+
+        <!-- Description -->
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold">Description</label>
+          <textarea
+            name="description"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            rows="4"
+            placeholder="Type description here"
+          ></textarea>
+        </div>
+
+        <!-- Visual Hook -->
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold">Visual Hook</label>
+          <textarea
+            name="visual_hook"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            rows="4"
+            placeholder="Share what you would like to see visually in the beginning of the creative"
+          ></textarea>
+        </div>
+
+        <!-- # V Hooks -->
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold">Visual Hook Quantity</label>
+          <input
+            type="number"
+            name="v_hooks"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          />
+        </div>
+
+        <!-- Audible Hook -->
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold">Audible Hook</label>
+          <textarea
+            name="audible_hook"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            rows="4"
+            placeholder="Share what you would like to hear audibly in the beginning of the creative"
+          ></textarea>
+        </div>
+
+        <!-- # A Hooks -->
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold">Audible Hook Quantity</label>
+          <input
+            type="number"
+            name="a_hooks"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          />
+        </div>
+
+        <!-- Visual Headlines -->
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold">Visual Headlines</label>
+          <textarea
+            name="visual_headlines"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            rows="4"
+            placeholder="Share what title you would like to see in the beginning of the creative"
+          ></textarea>
+        </div>
+
+        <!-- # V Headlines -->
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold"
+            >Visual Headline Quantity</label
+          >
+          <input
+            type="number"
+            name="v_headlines"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          />
+        </div>
+
+        <!-- Core Concept/Script -->
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold">Core Concept/Script</label>
+          <textarea
+            name="core_concept_script"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            rows="4"
+            placeholder="Insert your concept/script here"
+          ></textarea>
+        </div>
+
+        <!-- # CC Scripts -->
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold"
+            >Number of Core Concepts or Scripts</label
+          >
+          <input
+            type="number"
+            name="cc_scripts"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          />
+        </div>
+
+        <!-- CTA's -->
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold">Call To Action</label>
+          <textarea
+            name="ctas"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            rows="4"
+            placeholder="Share what CTA you would like to use at the end of the creative"
+          ></textarea>
+        </div>
+
+        <!-- Number of CTA's -->
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold"
+            >Number of Call To Actions</label
+          >
+          <input
+            type="number"
+            name="number_of_ctas"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          />
+        </div>
+
+        <!-- Captions? -->
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold">Captions?</label>
+          <div class="flex items-center">
+            <label class="mr-4 flex items-center">
+              <input type="radio" name="captions" value="Yes" class="mr-1" />
+              Yes
+            </label>
+            <label class="flex items-center">
+              <input type="radio" name="captions" value="No" class="mr-1" />
+              No
+            </label>
+          </div>
+        </div>
+
+        <!-- Testing Media Buyers -->
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold">Testing Media Buyers</label>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <label class="block text-center relative">
+              <input
+                type="checkbox"
+                name="testing_media_buyers"
+                value="Nate Poupko"
+                class="hidden peer"
+              />
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gray-300 cursor-pointer peer-checked:ring-2 peer-checked:ring-[#FF550B] rounded-full overflow-hidden relative image-container"
+              >
+                <img
+                  src="img/media_buyer_profiles/nate-poupko.png"
+                  alt="Nate Poupko"
+                  class="w-full h-full object-cover"
+                />
+                <img
+                  src="img/media_buyer_profiles/pfm-check.svg"
+                  alt="Selected"
+                  class="checkmark absolute inset-0 m-auto hidden peer-checked:block"
+                />
+              </div>
+              <span
+                class="block mt-1 sm:mt-2 text-center text-xs sm:text-sm peer-checked:font-semibold"
+                >Nate Poupko</span
+              >
+            </label>
+            <label class="block text-center relative">
+              <input
+                type="checkbox"
+                name="testing_media_buyers"
+                value="Mark Bondar"
+                class="hidden peer"
+              />
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gray-300 cursor-pointer peer-checked:ring-2 peer-checked:ring-[#FF550B] rounded-full overflow-hidden relative image-container"
+              >
+                <img
+                  src="img/media_buyer_profiles/mark-bondar.png"
+                  alt="Mark Bondar"
+                  class="w-full h-full object-cover"
+                />
+                <img
+                  src="img/media_buyer_profiles/pfm-check.svg"
+                  alt="Selected"
+                  class="checkmark absolute inset-0 m-auto hidden peer-checked:block"
+                />
+              </div>
+              <span
+                class="block mt-1 sm:mt-2 text-center text-xs sm:text-sm peer-checked:font-semibold"
+                >Mark Bondar</span
+              >
+            </label>
+            <label class="block text-center relative">
+              <input
+                type="checkbox"
+                name="testing_media_buyers"
+                value="Greg Smucker"
+                class="hidden peer"
+              />
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gray-300 cursor-pointer peer-checked:ring-2 peer-checked:ring-[#FF550B] rounded-full overflow-hidden relative image-container"
+              >
+                <img
+                  src="img/media_buyer_profiles/greg-smucker.jpg"
+                  alt="Greg Smucker"
+                  class="w-full h-full object-cover"
+                />
+                <img
+                  src="img/media_buyer_profiles/pfm-check.svg"
+                  alt="Selected"
+                  class="checkmark absolute inset-0 m-auto hidden peer-checked:block"
+                />
+              </div>
+              <span
+                class="block mt-1 sm:mt-2 text-center text-xs sm:text-sm peer-checked:font-semibold"
+                >Greg Smucker</span
+              >
+            </label>
+            <label class="block text-center relative">
+              <input
+                type="checkbox"
+                name="testing_media_buyers"
+                value="Anna Witkop"
+                class="hidden peer"
+              />
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gray-300 cursor-pointer peer-checked:ring-2 peer-checked:ring-[#FF550B] rounded-full overflow-hidden relative image-container"
+              >
+                <img
+                  src="img/media_buyer_profiles/anna-witkop.png"
+                  alt="Anna Witkop"
+                  class="w-full h-full object-cover"
+                />
+                <img
+                  src="img/media_buyer_profiles/pfm-check.svg"
+                  alt="Selected"
+                  class="checkmark absolute inset-0 m-auto hidden peer-checked:block"
+                />
+              </div>
+              <span
+                class="block mt-1 sm:mt-2 text-center text-xs sm:text-sm peer-checked:font-semibold"
+                >Anna Witkop</span
+              >
+            </label>
+            <label class="block text-center relative">
+              <input
+                type="checkbox"
+                name="testing_media_buyers"
+                value="Dima Haziiev"
+                class="hidden peer"
+              />
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gray-300 cursor-pointer peer-checked:ring-2 peer-checked:ring-[#FF550B] rounded-full overflow-hidden relative image-container"
+              >
+                <img
+                  src="img/media_buyer_profiles/dima-haziiev.png"
+                  alt="Dima Haziiev"
+                  class="w-full h-full object-cover"
+                />
+                <img
+                  src="img/media_buyer_profiles/pfm-check.svg"
+                  alt="Selected"
+                  class="checkmark absolute inset-0 m-auto hidden peer-checked:block"
+                />
+              </div>
+              <span
+                class="block mt-1 sm:mt-2 text-center text-xs sm:text-sm peer-checked:font-semibold"
+                >Dima Haziiev</span
+              >
+            </label>
+            <label class="block text-center relative">
+              <input
+                type="checkbox"
+                name="testing_media_buyers"
+                value="Sava Mezentsev"
+                class="hidden peer"
+              />
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gray-300 cursor-pointer peer-checked:ring-2 peer-checked:ring-[#FF550B] rounded-full overflow-hidden relative image-container"
+              >
+                <img
+                  src="img/media_buyer_profiles/sava-mezentsev.jpg"
+                  alt="Sava Mezentsev"
+                  class="w-full h-full object-cover"
+                />
+                <img
+                  src="img/media_buyer_profiles/pfm-check.svg"
+                  alt="Selected"
+                  class="checkmark absolute inset-0 m-auto hidden peer-checked:block"
+                />
+              </div>
+              <span
+                class="block mt-1 sm:mt-2 text-center text-xs sm:text-sm peer-checked:font-semibold"
+                >Sava Mezentsev</span
+              >
+            </label>
+            <label class="block text-center relative">
+              <input
+                type="checkbox"
+                name="testing_media_buyers"
+                value="Andrey Rizhkov"
+                class="hidden peer"
+              />
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gray-300 cursor-pointer peer-checked:ring-2 peer-checked:ring-[#FF550B] rounded-full overflow-hidden relative image-container"
+              >
+                <img
+                  src="img/media_buyer_profiles/andrey-rizhkov.png"
+                  alt="Andrey Rizhkov"
+                  class="w-full h-full object-cover"
+                />
+                <img
+                  src="img/media_buyer_profiles/pfm-check.svg"
+                  alt="Selected"
+                  class="checkmark absolute inset-0 m-auto hidden peer-checked:block"
+                />
+              </div>
+              <span
+                class="block mt-1 sm:mt-2 text-center text-xs sm:text-sm peer-checked:font-semibold"
+                >Andrey Rizhkov</span
+              >
+            </label>
+            <label class="block text-center relative">
+              <input
+                type="checkbox"
+                name="testing_media_buyers"
+                value="Rus Fedchenko"
+                class="hidden peer"
+              />
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gray-300 cursor-pointer peer-checked:ring-2 peer-checked:ring-[#FF550B] rounded-full overflow-hidden relative image-container"
+              >
+                <img
+                  src="img/media_buyer_profiles/rus-fedchenko.png"
+                  alt="Rus Fedchenko"
+                  class="w-full h-full object-cover"
+                />
+                <img
+                  src="img/media_buyer_profiles/pfm-check.svg"
+                  alt="Selected"
+                  class="checkmark absolute inset-0 m-auto hidden peer-checked:block"
+                />
+              </div>
+              <span
+                class="block mt-1 sm:mt-2 text-center text-xs sm:text-sm peer-checked:font-semibold"
+                >Rus Fedchenko</span
+              >
+            </label>
+          </div>
+        </div>
+
+        <!-- Producer -->
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold">Producer</label>
+          <select
+            name="producer"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          >
+            <option value="Oleg">Oleg</option>
+            <option value="Timofey">Timofey</option>
+            <option value="Rus F">Rus F</option>
+            <option value="Dima V">Dima V</option>
+            <option value="Nathan R">Nathan R</option>
+            <option value="Andrey T">Andrey T</option>
+          </select>
+        </div>
+
+        <div class="text-center">
+          <button
+            type="submit"
+            class="bg-blue-500 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-600"
+          >
+            Submit Request
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
